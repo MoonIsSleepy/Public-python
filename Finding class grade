@@ -1,0 +1,48 @@
+def enter_courses():
+    course_list = [ ]
+    while True:
+        course_dict = {}
+        course = input("Enter course name or q to quit: ")
+        if course == "q":
+            print()
+            break
+        course_dict["course"] = course
+        hours = int(input("Enter credit hours for class: ") )
+        course_dict["hours"] = hours
+        score = int( input("Enter course numerical score: ") )
+        course_dict["score"] = score
+        course_list.append(course_dict)
+        print()
+    return course_list
+
+def assign_letter_grade(course_list):
+     for course_dict in course_list:
+        score = course_dict["score"]
+        if score >= 90:
+            grade = "A"
+        elif score >= 80:
+            grade = "B"
+        elif score >= 70:
+            grade = "C"
+        elif score >= 60:
+            grade = "D"
+        elif score <= 59:
+            grade = "F"
+        course_dict["grade"] = grade
+
+
+def display_course_info(course_list):
+    x = "+" * 8
+    print(f"\n{x}\n+Courses+\n{x}")
+    for course_dict in course_list:
+        for key in course_dict:
+            print(f"{key}: {course_dict[key]}")
+
+    
+def main():
+    course_list = enter_courses()
+    assign_letter_grade(course_list)
+    display_course_info(course_list)
+
+main()
+        
