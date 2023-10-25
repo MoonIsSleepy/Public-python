@@ -1,2 +1,2 @@
 # Public-python
-This is all the simple things of code I have done on my own or in class 
+This is a public and open source file that anyone can use to learn and fixx their projects
